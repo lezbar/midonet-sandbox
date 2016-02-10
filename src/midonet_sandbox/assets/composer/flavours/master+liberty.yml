@@ -8,6 +8,7 @@ zookeeper1:
   - /zoo/conf/
   environment:
   - ZOO_ID=1
+  - ZOO_IN_MEM=false
 
 zookeeper2:
   extends:
@@ -17,6 +18,7 @@ zookeeper2:
   hostname: zookeeper2
   environment:
   - ZOO_ID=2
+  - ZOO_IN_MEM=false
   volumes_from:
   - zookeeper1
 
@@ -28,6 +30,7 @@ zookeeper3:
   hostname: zookeeper3
   environment:
   - ZOO_ID=3
+  - ZOO_IN_MEM=false
   volumes_from:
   - zookeeper1
   links:
