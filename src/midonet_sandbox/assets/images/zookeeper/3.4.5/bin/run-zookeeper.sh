@@ -3,7 +3,7 @@
 mkdir -p /var/lib/zookeeper
 
 # keep zookeeper in-memory for performance
-mount -t tmpfs -o size=1024m tmpfs /var/lib/zookeeper
+#mount -t tmpfs -o size=1024m tmpfs /var/lib/zookeeper
 
 # Parse the IP address of the container
 LOCAL_ZK_HOST=${LISTEN_ADDRESS:-`hostname --ip-address`}
