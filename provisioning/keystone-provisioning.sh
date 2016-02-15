@@ -43,3 +43,5 @@ $KEYSTONE endpoint-create \
   --internalurl http://$NEUTRON_IP:9696 \
   --adminurl http://$NEUTRON_IP:9696 \
   --region regionOne
+
+docker exec mnsandboxlabv5_mariadb_1 mysql -u root -proot -e "set global max_connections = 100000;";
