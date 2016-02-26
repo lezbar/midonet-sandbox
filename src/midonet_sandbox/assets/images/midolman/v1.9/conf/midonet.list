@@ -1,0 +1,2 @@
+deb http://192.168.30.4/artifactory/mem-1.9-deb testing main
+deb http://builds.midonet.org/misc stable main

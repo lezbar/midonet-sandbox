@@ -8,7 +8,7 @@ ADD src/fake_snort.c /tmp/fake_snort.c
 ONBUILD RUN curl -k http://repo.midonet.org/packages.midokura.key | apt-key add -
 ONBUILD RUN curl -k http://builds.midonet.org/midorepo.key | apt-key add -
 ONBUILD RUN apt-get -qy update
-ONBUILD RUN apt-get install -qy midolman zkdump python-setproctitle
+ONBUILD RUN apt-get install -qy --force-yes midolman zkdump python-setproctitle
 
 RUN apt-get -qy update
 RUN apt-get -qy install git mz tcpdump nmap iptables telnet traceroute --no-install-recommends
@@ -16,7 +16,7 @@ RUN apt-get -qy install git mz tcpdump nmap iptables telnet traceroute --no-inst
 # Install Java 8
 RUN apt-get install -qy software-properties-common
 RUN add-apt-repository -y ppa:openjdk-r/ppa
-RUN apt-get update && apt-get install -qy openjdk-8-jdk --no-install-recommends
+RUN apt-get update && apt-get install -qy openjdk-8-jdk openjdk-7-jdk --no-install-recommends
 
 # get deps and compile fake snort
 RUN apt-get install -qy libpcap-dev
